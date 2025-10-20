@@ -186,7 +186,7 @@ FastWebP is designed with privacy as the top priority:
 - ✅ **No accounts** - No registration or login required
 - ✅ **Open source** - Code is transparent and auditable
 
-See our [Privacy Policy](https://fastwebptojpg.com/privacy) for details.
+See our [Privacy Policy](https://www.fastwebptojpg.com/privacy) for details.
 
 ---
 

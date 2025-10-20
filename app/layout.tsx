@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "FastWebP - Fast & Free WebP to JPG Converter",
   description: "Convert WebP files to JPG instantly in your browser. No uploads, completely private, bulk conversion supported. Fast, free, and secure WebP converter.",
-  keywords: "WebP to JPG, WebP converter, convert WebP, image converter, free converter, fast WebP, FastWebP, bulk convert, web images",
+  keywords: "WebP to JPG, WebP to JPEG, WebP converter, convert WebP to JPG online, online WebP converter, free WebP converter, WebP to JPG online free, image converter, browser WebP converter, private WebP converter, batch WebP converter, bulk convert WebP, no upload WebP converter",
   authors: [{ name: "FastWebP" }],
   creator: "FastWebP",
   publisher: "FastWebP",
@@ -68,7 +68,8 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code', // To be replaced with actual code
+    // Add your Google Search Console verification code here after claiming your site
+    // google: 'your-verification-code-here',
   },
   alternates: {
     canonical: "https://www.fastwebptojpg.com",

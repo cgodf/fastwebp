@@ -69,7 +69,7 @@ The following security headers are implemented:
 ## Best Practices for Users
 
 1. **Use Updated Browsers** - Keep your browser up to date
-2. **Verify HTTPS** - Ensure you're on `https://fastwebptojpg.com`
+2. **Verify HTTPS** - Ensure you're on `https://www.fastwebptojpg.com`
 3. **Disable Suspicious Extensions** - Browser extensions can access page data
 4. **Local Processing** - Files never leave your device
 5. **No Account Needed** - No passwords to manage or leak

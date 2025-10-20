@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HowToSchema from "../components/HowToSchema";
 
 export const metadata: Metadata = {
   title: "How It Works - FastWebP Converter",
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 export default function HowItWorks() {
   return (
     <div className="min-h-screen bg-background">
+      <HowToSchema />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="prose prose-lg mx-auto">
           <h1 className="text-4xl font-bold text-foreground mb-8 text-center">

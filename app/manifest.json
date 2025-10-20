@@ -1,6 +1,13 @@
 {
-  "name": "FastWebP",
+  "name": "FastWebP - WebP to JPG Converter",
   "short_name": "FastWebP",
+  "description": "Convert WebP files to JPG instantly in your browser. Private, fast, and free.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7c3aed",
+  "orientation": "any",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +22,5 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#7c3aed",
-  "background_color": "#ffffff",
-  "display": "browser"
+  "categories": ["photo", "productivity", "utilities"]
 }
