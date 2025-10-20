@@ -50,7 +50,7 @@ FastWebP converts files **entirely in your browser** using Canvas API. Your phot
 
 ### Technical Features
 - ⚡ Built with Next.js 15 and React 19
-- 🎯 Canvas API-powered conversion via webp2any
+- 🎯 Canvas API-powered conversion (native browser implementation)
 - 🌓 Light/Dark mode support
 - ♿ Accessibility-focused design
 - 📊 Anonymous analytics (Google Analytics)
@@ -67,7 +67,7 @@ FastWebP converts files **entirely in your browser** using Canvas API. Your phot
 | **Language** | TypeScript 5 |
 | **UI Library** | React 19 |
 | **Styling** | Tailwind CSS 4 |
-| **Conversion** | [webp2any](https://github.com/alexcorvi/webp2any) (Canvas API) |
+| **Conversion** | Native Canvas API (browser-based) |
 | **File Handling** | react-dropzone, JSZip |
 | **Analytics** | Google Analytics 4 (optional) |
 | **Deployment** | Vercel |
@@ -349,9 +349,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [webp2any](https://github.com/alexcorvi/webp2any) - Canvas API WebP converter
 - [Next.js](https://nextjs.org/) - React framework
 - [Vercel](https://vercel.com/) - Hosting platform
+- [react-dropzone](https://react-dropzone.js.org/) - File upload component
+- [JSZip](https://stuk.github.io/jszip/) - ZIP file generation
 
 ---
 

@@ -73,9 +73,9 @@ export default function TermsOfService() {
               <div className="border-2 border-border p-6 rounded-lg">
                 <p className="text-muted-foreground mb-4">
                   FastWebP is a free, browser-based service that converts WebP
-                  (High Efficiency Image Container) files to JPG format. The
-                  service operates entirely within your web browser using
-                  Canvas API technology.
+                  files to JPG format. WebP is a modern image format developed by Google
+                  that provides superior compression. The service operates entirely within 
+                  your web browser using Canvas API technology.
                 </p>
                 <div className="border border-border p-4 rounded">
                   <p className="text-sm font-medium text-foreground mb-2">

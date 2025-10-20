@@ -63,7 +63,7 @@ The following security headers are implemented:
 
 ### Potential Risks
 ⚠️ **Browser Vulnerabilities** - Users should keep browsers updated  
-⚠️ **Canvas API Bugs** - Dependent on webp2any library security  
+⚠️ **Canvas API Bugs** - Dependent on native browser Canvas API implementation  
 ⚠️ **Client-Side Attacks** - Malicious browser extensions could access files  
 
 ## Best Practices for Users
@@ -128,7 +128,7 @@ We monitor and update dependencies regularly:
 ## Technical Security Measures
 
 ### Input Validation
-- File type checking (WebP/WebP only)
+- File type checking (WebP only)
 - File size limits enforced
 - Maximum file count limits
 - Sanitized file names
