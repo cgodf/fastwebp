@@ -1,28 +1,28 @@
 <div align="center">
 
-# 🚀 FastHEIC
+# 🚀 FastWebP
 
-### Convert HEIC to JPG Instantly in Your Browser
+### Convert WebP to JPG Instantly in Your Browser
 
-**100% Private • No Uploads • WebAssembly Powered**
+**100% Private • No Uploads • Canvas API Powered**
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.fastheictojpg.com&style=for-the-badge&logo=vercel)](https://www.fastheictojpg.com)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.fastwebptojpg.com&style=for-the-badge&logo=vercel)](https://www.fastwebptojpg.com)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
-[🌐 Live Demo](https://www.fastheictojpg.com) • [📖 How It Works](https://www.fastheictojpg.com/how-it-works) • [🐛 Report Bug](https://github.com/cgodf/fastheic/issues) • [✨ Request Feature](https://github.com/cgodf/fastheic/issues)
+[🌐 Live Demo](https://www.fastwebptojpg.com) • [📖 How It Works](https://www.fastwebptojpg.com/how-it-works) • [🐛 Report Bug](https://github.com/cgodf/fastwebp/issues) • [✨ Request Feature](https://github.com/cgodf/fastwebp/issues)
 
-![FastHEIC Screenshot](https://via.placeholder.com/800x400/0d9488/ffffff?text=FastHEIC+Screenshot+Coming+Soon)
+![FastWebP Screenshot](https://via.placeholder.com/800x400/0d9488/ffffff?text=FastWebP+Screenshot+Coming+Soon)
 <!-- TODO: Replace with actual screenshot -->
 
 </div>
 
 ---
 
-## 📖 Why FastHEIC?
+## 📖 Why FastWebP?
 
-Ever tried sharing iPhone photos with friends on Android or Windows? They can't open HEIC files. Most converter websites either:
+Ever tried sharing WebP images with friends on Android or Windows? They can't open WebP files. Most converter websites either:
 
 - ❌ Require uploading your personal photos to their servers
 - ❌ Limit file count unless you pay
@@ -30,18 +30,18 @@ Ever tried sharing iPhone photos with friends on Android or Windows? They can't 
 - ❌ Plaster watermarks on your images
 - ❌ Have terrible mobile experience
 
-**FastHEIC solves all of these problems.**
+**FastWebP solves all of these problems.**
 
 ### ✨ What Makes It Different
 
-FastHEIC converts files **entirely in your browser** using WebAssembly. Your photos literally never leave your device. No servers, no uploads, no privacy concerns.
+FastWebP converts files **entirely in your browser** using Canvas API. Your photos literally never leave your device. No servers, no uploads, no privacy concerns.
 
 ---
 
 ## 🎯 Features
 
 ### Core Functionality
-- 🚀 **Lightning Fast** - Instant conversion using WebAssembly
+- 🚀 **Lightning Fast** - Instant conversion using Canvas API
 - 🔒 **100% Private** - All processing happens locally in your browser
 - 📦 **Batch Conversion** - Convert multiple files at once
 - 💾 **ZIP Download** - Download all converted files in a single archive
@@ -50,7 +50,7 @@ FastHEIC converts files **entirely in your browser** using WebAssembly. Your pho
 
 ### Technical Features
 - ⚡ Built with Next.js 15 and React 19
-- 🎯 WebAssembly-powered conversion via heic2any
+- 🎯 Canvas API-powered conversion via webp2any
 - 🌓 Light/Dark mode support
 - ♿ Accessibility-focused design
 - 📊 Anonymous analytics (Google Analytics)
@@ -67,7 +67,7 @@ FastHEIC converts files **entirely in your browser** using WebAssembly. Your pho
 | **Language** | TypeScript 5 |
 | **UI Library** | React 19 |
 | **Styling** | Tailwind CSS 4 |
-| **Conversion** | [heic2any](https://github.com/alexcorvi/heic2any) (WebAssembly) |
+| **Conversion** | [webp2any](https://github.com/alexcorvi/webp2any) (Canvas API) |
 | **File Handling** | react-dropzone, JSZip |
 | **Analytics** | Google Analytics 4 (optional) |
 | **Deployment** | Vercel |
@@ -78,8 +78,8 @@ FastHEIC converts files **entirely in your browser** using WebAssembly. Your pho
 ## ⚡ Quick Start
 
 ```bash
-git clone https://github.com/cgodf/fastheic.git
-cd fastheic
+git clone https://github.com/cgodf/fastwebp.git
+cd fastwebp
 npm install
 npm run dev
 ```
@@ -99,8 +99,8 @@ Open [http://localhost:3000](http://localhost:3000) and start converting!
 
 ```bash
 # Clone the repository
-git clone https://github.com/cgodf/fastheic.git
-cd fastheic
+git clone https://github.com/cgodf/fastwebp.git
+cd fastwebp
 
 # Install dependencies
 npm install
@@ -126,7 +126,7 @@ npm start
 ## 📁 Project Structure
 
 ```
-fastheic/
+fastwebp/
 ├── app/
 │   ├── components/         # React components
 │   │   ├── ConversionPipeline.tsx
@@ -136,7 +136,7 @@ fastheic/
 │   │   ├── Footer.tsx
 │   │   └── ...
 │   ├── services/          # Business logic
-│   │   └── heicConverter.ts
+│   │   └── webpConverter.ts
 │   ├── how-it-works/      # Static pages
 │   ├── privacy/
 │   ├── terms/
@@ -144,7 +144,7 @@ fastheic/
 │   ├── layout.tsx         # Root layout
 │   └── page.tsx           # Home page
 ├── public/                # Static assets
-│   ├── fastheiclogo.svg
+│   ├── fastwebplogo.svg
 │   ├── favicon.ico
 │   └── manifest.json
 ├── types/                 # TypeScript definitions
@@ -156,10 +156,10 @@ fastheic/
 ## 🎨 Features in Detail
 
 ### Browser-Based Processing
-All file conversion happens in your browser using WebAssembly. Your files never leave your device, ensuring complete privacy and security.
+All file conversion happens in your browser using Canvas API. Your files never leave your device, ensuring complete privacy and security.
 
 ### Batch Conversion
-Convert multiple HEIC files simultaneously with real-time progress tracking and error recovery.
+Convert multiple WebP files simultaneously with real-time progress tracking and error recovery.
 
 ### ZIP Download
 Download all converted files at once in a convenient ZIP archive.
@@ -178,7 +178,7 @@ Individual file retry functionality if conversion fails for specific files.
 
 ## 🔐 Privacy & Security
 
-FastHEIC is designed with privacy as the top priority:
+FastWebP is designed with privacy as the top priority:
 
 - ✅ **No file uploads** - All processing happens locally
 - ✅ **No server storage** - Files never touch our servers  
@@ -186,7 +186,7 @@ FastHEIC is designed with privacy as the top priority:
 - ✅ **No accounts** - No registration or login required
 - ✅ **Open source** - Code is transparent and auditable
 
-See our [Privacy Policy](https://fastheictojpg.com/privacy) for details.
+See our [Privacy Policy](https://fastwebptojpg.com/privacy) for details.
 
 ---
 
@@ -217,7 +217,7 @@ NEXT_PUBLIC_ADSENSE_ID=ca-pub-xxxxxxxxxxxxxxxx
 
 ### Vercel (Recommended)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/cgodf/fastheic)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/cgodf/fastwebp)
 
 1. Push to GitHub
 2. Import to Vercel
@@ -226,7 +226,7 @@ NEXT_PUBLIC_ADSENSE_ID=ca-pub-xxxxxxxxxxxxxxxx
 
 ### Other Platforms
 
-FastHEIC works on any platform that supports Next.js:
+FastWebP works on any platform that supports Next.js:
 - Netlify
 - AWS Amplify
 - Cloudflare Pages
@@ -236,7 +236,7 @@ FastHEIC works on any platform that supports Next.js:
 
 ## 📊 Browser Support
 
-FastHEIC works on all modern browsers with WebAssembly support:
+FastWebP works on all modern browsers with Canvas API support:
 
 | Browser | Minimum Version | Status |
 |---------|----------------|--------|
@@ -261,7 +261,7 @@ FastHEIC works on all modern browsers with WebAssembly support:
 
 ## 🗺️ Roadmap
 
-- [x] Basic HEIC to JPG conversion
+- [x] Basic WebP to JPG conversion
 - [x] Batch processing
 - [x] Dark mode
 - [x] Mobile optimization
@@ -272,7 +272,7 @@ FastHEIC works on all modern browsers with WebAssembly support:
 - [ ] Progressive Web App (PWA)
 - [ ] Offline mode
 
-**Want to help?** Check out [open issues](https://github.com/cgodf/fastheic/issues)!
+**Want to help?** Check out [open issues](https://github.com/cgodf/fastwebp/issues)!
 
 ---
 
@@ -281,13 +281,13 @@ FastHEIC works on all modern browsers with WebAssembly support:
 <details>
 <summary><b>Is my data really safe?</b></summary>
 
-Yes! All conversion happens in your browser using WebAssembly. You can verify this by opening your browser's Network tab - you'll see zero file uploads. The code is open source, so you can audit it yourself.
+Yes! All conversion happens in your browser using Canvas API. You can verify this by opening your browser's Network tab - you'll see zero file uploads. The code is open source, so you can audit it yourself.
 </details>
 
 <details>
 <summary><b>Why is it free?</b></summary>
 
-FastHEIC is ad-supported (non-intrusive) and open source. Since processing happens client-side, there are no server costs for conversions.
+FastWebP is ad-supported (non-intrusive) and open source. Since processing happens client-side, there are no server costs for conversions.
 </details>
 
 <details>
@@ -299,7 +299,7 @@ Up to 10 files simultaneously, with a max of 50MB per file and 200MB total batch
 <details>
 <summary><b>Does it work offline?</b></summary>
 
-After the initial load, FastHEIC can work offline since all processing is local. PWA support is on the roadmap for better offline experience.
+After the initial load, FastWebP can work offline since all processing is local. PWA support is on the roadmap for better offline experience.
 </details>
 
 <details>
@@ -316,8 +316,8 @@ We love contributions! Whether it's bug reports, feature requests, or code contr
 
 ### Ways to Contribute
 
-- 🐛 [Report bugs](https://github.com/cgodf/fastheic/issues/new?labels=bug)
-- 💡 [Suggest features](https://github.com/cgodf/fastheic/issues/new?labels=enhancement)
+- 🐛 [Report bugs](https://github.com/cgodf/fastwebp/issues/new?labels=bug)
+- 💡 [Suggest features](https://github.com/cgodf/fastwebp/issues/new?labels=enhancement)
 - 📝 Improve documentation
 - 🌍 Add translations
 - ⭐ Star this repo if you find it useful!
@@ -325,7 +325,7 @@ We love contributions! Whether it's bug reports, feature requests, or code contr
 ### Development Workflow
 
 1. **Fork** the repository
-2. **Clone** your fork: `git clone https://github.com/YOUR_USERNAME/fastheic.git`
+2. **Clone** your fork: `git clone https://github.com/YOUR_USERNAME/fastwebp.git`
 3. **Create** a branch: `git checkout -b feature/amazing-feature`
 4. **Make** your changes and test thoroughly
 5. **Commit**: `git commit -m 'Add amazing feature'`
@@ -349,7 +349,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [heic2any](https://github.com/alexcorvi/heic2any) - WebAssembly HEIC converter
+- [webp2any](https://github.com/alexcorvi/webp2any) - Canvas API WebP converter
 - [Next.js](https://nextjs.org/) - React framework
 - [Vercel](https://vercel.com/) - Hosting platform
 
@@ -357,10 +357,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 Show Your Support
 
-If FastHEIC helped you, please consider:
+If FastWebP helped you, please consider:
 
 - ⭐ **Starring** this repository
-- 🐦 **Sharing** on [Twitter](https://twitter.com/intent/tweet?text=Check%20out%20FastHEIC%20-%20a%20privacy-focused%20HEIC%20to%20JPG%20converter!%20https://www.fastheictojpg.com)
+- 🐦 **Sharing** on [Twitter](https://twitter.com/intent/tweet?text=Check%20out%20FastWebP%20-%20a%20privacy-focused%20WebP%20to%20JPG%20converter!%20https://www.fastwebptojpg.com)
 - 📝 **Writing** a review or blog post
 - 🤝 **Contributing** to the project
 
@@ -368,18 +368,18 @@ If FastHEIC helped you, please consider:
 
 ## 📬 Contact & Community
 
-- 🌐 **Website:** [www.fastheictojpg.com](https://www.fastheictojpg.com)
-- 🐛 **Issues:** [GitHub Issues](https://github.com/cgodf/fastheic/issues)
-- 💬 **Discussions:** [GitHub Discussions](https://github.com/cgodf/fastheic/discussions)
-- 📧 **Email:** info@fastheictojpg.com
+- 🌐 **Website:** [www.fastwebptojpg.com](https://www.fastwebptojpg.com)
+- 🐛 **Issues:** [GitHub Issues](https://github.com/cgodf/fastwebp/issues)
+- 💬 **Discussions:** [GitHub Discussions](https://github.com/cgodf/fastwebp/discussions)
+- 📧 **Email:** info@fastwebptojpg.com
 
 ---
 
 ## 📈 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/cgodf/fastheic?style=social)
-![GitHub forks](https://img.shields.io/github/forks/cgodf/fastheic?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/cgodf/fastheic?style=social)
+![GitHub stars](https://img.shields.io/github/stars/cgodf/fastwebp?style=social)
+![GitHub forks](https://img.shields.io/github/forks/cgodf/fastwebp?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/cgodf/fastwebp?style=social)
 
 ---
 
@@ -387,7 +387,7 @@ If FastHEIC helped you, please consider:
 
 **Made with ❤️ for privacy-conscious users**
 
-[Website](https://www.fastheictojpg.com) • [Twitter](https://twitter.com/fastheic) • [GitHub](https://github.com/cgodf/fastheic)
+[Website](https://www.fastwebptojpg.com) • [Twitter](https://twitter.com/fastwebp) • [GitHub](https://github.com/cgodf/fastwebp)
 
 **If you found this useful, please ⭐ star the repo!**
 

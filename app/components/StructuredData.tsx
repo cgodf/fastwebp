@@ -2,16 +2,16 @@ export default function StructuredData() {
   const webApplicationSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "FastHEIC",
-    "url": "https://www.fastheictojpg.com",
-    "description": "Convert HEIC files to JPG instantly in your browser. No uploads, completely private, bulk conversion supported.",
+    "name": "FastWebP",
+    "url": "https://www.fastwebptojpg.com",
+    "description": "Convert WebP files to JPG instantly in your browser. No uploads, completely private, bulk conversion supported.",
     "applicationCategory": "PhotographyApplication",
     "operatingSystem": "Any",
     "browserRequirements": "Requires JavaScript. Works on Chrome, Firefox, Safari, Edge.",
     "softwareVersion": "1.0",
     "author": {
       "@type": "Organization",
-      "name": "FastHEIC"
+      "name": "FastWebP"
     },
     "offers": {
       "@type": "Offer",
@@ -19,41 +19,41 @@ export default function StructuredData() {
       "priceCurrency": "USD"
     },
     "featureList": [
-      "HEIC to JPG conversion",
+      "WebP to JPG conversion",
       "Bulk file processing", 
       "Private browser-based conversion",
       "No file uploads required",
       "Fast processing",
       "Cross-platform compatibility"
     ],
-    "screenshot": "https://www.fastheictojpg.com/app-screenshot.jpg"
+    "screenshot": "https://www.fastwebptojpg.com/app-screenshot.jpg"
   };
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "FastHEIC",
-    "url": "https://www.fastheictojpg.com",
-    "description": "Fast and free HEIC to JPG converter tool",
+    "name": "FastWebP",
+    "url": "https://www.fastwebptojpg.com",
+    "description": "Fast and free WebP to JPG converter tool",
     "foundingDate": "2024",
     "sameAs": [
-      "https://twitter.com/fastheic"
+      "https://twitter.com/fastwebp"
     ]
   };
 
   const softwareApplicationSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "FastHEIC - HEIC to JPG Converter",
+    "name": "FastWebP - WebP to JPG Converter",
     "applicationCategory": "PhotographyApplication",
     "operatingSystem": "Web Browser",
-    "url": "https://www.fastheictojpg.com",
-    "description": "Convert HEIC files to JPG instantly in your browser. No uploads, completely private, bulk conversion supported.",
+    "url": "https://www.fastwebptojpg.com",
+    "description": "Convert WebP files to JPG instantly in your browser. No uploads, completely private, bulk conversion supported.",
     "softwareVersion": "1.0",
     "datePublished": "2024-01-01",
     "author": {
       "@type": "Organization", 
-      "name": "FastHEIC"
+      "name": "FastWebP"
     },
     "offers": {
       "@type": "Offer",
@@ -77,7 +77,7 @@ export default function StructuredData() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.fastheictojpg.com"
+        "item": "https://www.fastwebptojpg.com"
       }
     ]
   };

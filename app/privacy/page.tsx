@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - FastHEIC Converter",
+  title: "Privacy Policy - FastWebP Converter",
   description:
-    "FastHEIC Privacy Policy - Learn how we protect your privacy with local file processing, no uploads, and minimal data collection.",
-  keywords: "HEIC privacy, secure file conversion, private image converter, no upload converter, local file processing",
+    "FastWebP Privacy Policy - Learn how we protect your privacy with local file processing, no uploads, and minimal data collection.",
+  keywords: "WebP privacy, secure file conversion, private image converter, no upload converter, local file processing",
   openGraph: {
-    title: "Privacy Policy - FastHEIC Converter",
+    title: "Privacy Policy - FastWebP Converter",
     description:
-      "FastHEIC Privacy Policy - Learn how we protect your privacy with local file processing, no uploads, and minimal data collection.",
+      "FastWebP Privacy Policy - Learn how we protect your privacy with local file processing, no uploads, and minimal data collection.",
   },
 };
 
@@ -36,7 +36,7 @@ export default function PrivacyPolicy() {
               </h2>
             </div>
             <p className="text-foreground font-medium">
-              FastHEIC processes all files locally in your browser. Your images never leave your device,
+              FastWebP processes all files locally in your browser. Your images never leave your device,
               and we cannot access, store, or view your files in any way.
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
                   <li className="flex items-center text-muted-foreground">
                     <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
                     <strong className="text-foreground">Your files:</strong>{" "}
-                    HEIC images, converted JPG files, or any file content
+                    WebP images, converted JPG files, or any file content
                   </li>
                   <li className="flex items-center text-muted-foreground">
                     <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
@@ -100,7 +100,7 @@ export default function PrivacyPolicy() {
                     In Your Browser
                   </h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Files are processed using WebAssembly</li>
+                    <li>• Files are processed using Canvas API</li>
                     <li>• Conversion happens in browser memory</li>
                     <li>• No network requests for processing</li>
                     <li>• Files are cleared when you close the tab</li>
@@ -317,7 +317,7 @@ export default function PrivacyPolicy() {
               </h2>
               <div className="border-2 border-border p-6 rounded-lg">
                 <p className="text-muted-foreground">
-                  FastHEIC is safe for users of all ages since we don&apos;t collect
+                  FastWebP is safe for users of all ages since we don&apos;t collect
                   personal information. However, we recommend parental guidance
                   for users under 13, as required by COPPA. Since no personal
                   data is collected, no special procedures are needed for
@@ -361,7 +361,7 @@ export default function PrivacyPolicy() {
                     Contact Methods:
                   </p>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Email: info@fastheictojpg.com</li>
+                    <li>• Email: info@fastwebptojpg.com</li>
                   </ul>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3">
@@ -374,7 +374,7 @@ export default function PrivacyPolicy() {
           {/* CTA Section */}
           <div className="text-center mt-12 pt-8 border-t border-border">
             <p className="text-muted-foreground mb-4">
-              Ready to convert your HEIC files with complete privacy?
+              Ready to convert your WebP files with complete privacy?
             </p>
             <Link
               href="/"

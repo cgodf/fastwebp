@@ -5,26 +5,26 @@ export default function FAQSchema() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is a HEIC file?",
+        "name": "What is a WebP file?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "HEIC (High Efficiency Image Container) is a modern image format used by Apple devices since iOS 11. It provides better compression than JPG while maintaining image quality, but is not widely supported outside Apple ecosystems."
+          "text": "WebP is a modern image format developed by Google that provides superior compression compared to JPG and PNG. While widely supported by modern browsers, some older systems and applications may not support WebP files."
         }
       },
       {
         "@type": "Question",
-        "name": "Why do I need to convert HEIC to JPG?",
+        "name": "Why do I need to convert WebP to JPG?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "JPG is universally supported across all devices, browsers, and platforms. Converting HEIC to JPG ensures your photos can be viewed and shared anywhere without compatibility issues."
+          "text": "JPG is universally supported across all devices, browsers, and platforms. Converting WebP to JPG ensures your images can be viewed and shared anywhere without compatibility issues."
         }
       },
       {
         "@type": "Question",
-        "name": "Is FastHEIC really free?",
+        "name": "Is FastWebP really free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, FastHEIC is completely free to use with no file limits, watermarks, or hidden fees. All processing happens in your browser, so we don't incur server costs for conversions."
+          "text": "Yes, FastWebP is completely free to use with no file limits, watermarks, or hidden fees. All processing happens in your browser, so we don't incur server costs for conversions."
         }
       },
       {
@@ -32,7 +32,7 @@ export default function FAQSchema() {
         "name": "Are my files uploaded to your server?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. FastHEIC converts files entirely in your browser using WebAssembly technology. Your files never leave your device, ensuring complete privacy and security."
+          "text": "No. FastWebP converts files entirely in your browser using native Canvas API technology. Your files never leave your device, ensuring complete privacy and security."
         }
       },
       {
@@ -45,10 +45,10 @@ export default function FAQSchema() {
       },
       {
         "@type": "Question",
-        "name": "Does FastHEIC work on mobile devices?",
+        "name": "Does FastWebP work on mobile devices?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! FastHEIC works on all modern browsers including mobile Safari, Chrome, and Firefox on iOS and Android devices."
+          "text": "Yes! FastWebP works on all modern browsers including mobile Safari, Chrome, and Firefox on iOS and Android devices."
         }
       },
       {
@@ -56,7 +56,7 @@ export default function FAQSchema() {
         "name": "Will the image quality be affected?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "FastHEIC converts HEIC files to high-quality JPG (90% quality) which preserves excellent image quality while ensuring broad compatibility."
+          "text": "FastWebP converts WebP files to high-quality JPG (90% quality) which preserves excellent image quality while ensuring broad compatibility."
         }
       },
       {
@@ -64,7 +64,7 @@ export default function FAQSchema() {
         "name": "Do I need to install any software?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No installation required. FastHEIC is a web-based tool that works directly in your browser. Just visit the website and start converting."
+          "text": "No installation required. FastWebP is a web-based tool that works directly in your browser. Just visit the website and start converting."
         }
       }
     ]

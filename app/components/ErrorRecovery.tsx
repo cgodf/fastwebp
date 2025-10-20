@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ConversionFile } from '../../types/libheif';
+import { ConversionFile } from '../../types/webp';
 
 interface ErrorRecoveryProps {
   files: ConversionFile[];
@@ -54,7 +54,7 @@ export default function ErrorRecovery({
       suggestions.push({
         type: 'corrupt',
         title: 'Corrupted Files',
-        description: 'Some HEIC files appear to be corrupted or invalid. These need to be removed or replaced.',
+        description: 'Some WebP files appear to be corrupted or invalid. These need to be removed or replaced.',
         action: 'Remove Corrupted Files',
         actionType: 'remove'
       });
@@ -169,7 +169,7 @@ export default function ErrorRecovery({
                     ? 'opacity-50 cursor-not-allowed' 
                     : 'hover:scale-105'
                 } ${
-                  suggestion.actionType === 'retry' ? 'text-teal-400 hover:bg-teal-500/10' :
+                  suggestion.actionType === 'retry' ? 'text-purple-400 hover:bg-purple-500/10' :
                   suggestion.actionType === 'remove' ? 'text-red-400 hover:bg-red-500/10' :
                   'text-muted-foreground'
                 }`}
@@ -227,7 +227,7 @@ export default function ErrorRecovery({
       <div className="flex flex-wrap gap-3">
         <button
           onClick={() => handleBulkAction('retry')}
-          className="glass-card px-4 py-2 rounded-lg font-medium text-teal-400 hover:bg-teal-500/10 hover:scale-105 transition-bounce"
+          className="glass-card px-4 py-2 rounded-lg font-medium text-purple-400 hover:bg-purple-500/10 hover:scale-105 transition-bounce"
         >
           <span className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -16,61 +16,16 @@ export interface ConversionResult {
   };
 }
 
-// Type for heic2any function
-type Heic2AnyFunction = (options: {
-  blob: Blob;
-  toType: string;
-  quality: number;
-  multiple?: boolean;
-}) => Promise<Blob | Blob[]>;
-
-export class HeicConverterService {
-  private heic2any: Heic2AnyFunction | null = null;
-  private isLoading = false;
-  private loadPromise: Promise<void> | null = null;
-
+export class WebpConverterService {
   /**
-   * Lazy load heic2any library
-   */
-  private async loadHeic2any(): Promise<void> {
-    if (this.heic2any) return;
-    
-    if (this.isLoading && this.loadPromise) {
-      await this.loadPromise;
-      return;
-    }
-
-    this.isLoading = true;
-    this.loadPromise = this.performLoad();
-    
-    try {
-      await this.loadPromise;
-    } finally {
-      this.isLoading = false;
-      this.loadPromise = null;
-    }
-  }
-
-  private async performLoad(): Promise<void> {
-    try {
-      const heic2anyModule = await import('heic2any');
-      this.heic2any = heic2anyModule.default as Heic2AnyFunction;
-      console.log('heic2any loaded successfully');
-    } catch (error) {
-      console.error('Failed to load heic2any:', error);
-      throw new Error('Failed to load HEIC converter');
-    }
-  }
-
-  /**
-   * Check if the browser supports HEIC conversion
+   * Check if the browser supports WebP conversion
    */
   public checkBrowserSupport(): { supported: boolean; message?: string } {
-    // Check for WebAssembly support (required by heic2any)
-    if (typeof WebAssembly !== 'object') {
+    // Check for Canvas support (required for WebP to JPG conversion)
+    if (typeof HTMLCanvasElement === 'undefined') {
       return {
         supported: false,
-        message: 'WebAssembly is not supported. Please use Chrome 57+, Firefox 52+, Safari 11+, or Edge 16+.'
+        message: 'Canvas API is not supported. Please update your browser.'
       };
     }
 
@@ -82,19 +37,11 @@ export class HeicConverterService {
       };
     }
 
-    // Check for Canvas support (for thumbnail generation)
-    if (typeof HTMLCanvasElement === 'undefined') {
-      return {
-        supported: false,
-        message: 'Canvas API is not supported. Please update your browser.'
-      };
-    }
-
     return { supported: true };
   }
 
   /**
-   * Convert a single HEIC file to JPG with retry logic
+   * Convert a single WebP file to JPG with retry logic
    */
   public async convertFile(file: File, quality: number = 0.9, maxRetries: number = 2): Promise<ConversionResult> {
     let lastError: Error | ConversionResult['error'] | null = null;
@@ -143,7 +90,7 @@ export class HeicConverterService {
   }
   
   /**
-   * Perform the actual conversion (extracted for retry logic)
+   * Perform the actual conversion using Canvas API
    */
   private async performConversion(file: File, quality: number = 0.9): Promise<ConversionResult> {
     // Check browser support first
@@ -159,41 +106,29 @@ export class HeicConverterService {
     }
 
     try {
-      // Load heic2any if not already loaded
-      await this.loadHeic2any();
-      
-      // Ensure heic2any is loaded
-      if (!this.heic2any) {
-        return {
-          success: false,
-          error: {
-            type: 'CONVERSION_FAILED',
-            message: 'Failed to load HEIC converter library'
-          }
-        };
-      }
-
       // Validate file type
-      if (!this.isHeicFile(file)) {
+      if (!this.isWebpFile(file)) {
         return {
           success: false,
           error: {
             type: 'INVALID_FILE',
-            message: 'File must be HEIC or HEIF format'
+            message: 'File must be WebP format'
           }
         };
       }
 
-      // Convert file to blob if it isn't already
-      const blob = file instanceof Blob ? file : new Blob([file]);
-
-      // Perform conversion
-      const convertedBlob = await this.heic2any({
-        blob,
-        toType: 'image/jpeg',
-        quality,
-        multiple: false // We handle one file at a time
-      }) as Blob;
+      // Convert WebP to JPG using Canvas API
+      const convertedBlob = await this.convertWebpToJpg(file, quality);
+      
+      if (!convertedBlob) {
+        return {
+          success: false,
+          error: {
+            type: 'CONVERSION_FAILED',
+            message: 'Failed to convert WebP to JPG'
+          }
+        };
+      }
 
       // Generate thumbnail
       const thumbnail = await this.generateThumbnail(convertedBlob);
@@ -206,7 +141,7 @@ export class HeicConverterService {
 
     } catch (error: unknown) {
       const err = error as Error;
-      console.error('HEIC conversion failed:', error);
+      console.error('WebP conversion failed:', error);
       
       // Determine error type
       let errorType: ConversionError = 'UNKNOWN_ERROR';
@@ -217,7 +152,7 @@ export class HeicConverterService {
         errorMessage = 'Not enough memory to convert this file. Try a smaller file.';
       } else if (err?.message?.includes('Invalid') || err?.message?.includes('corrupt')) {
         errorType = 'INVALID_FILE';
-        errorMessage = 'This HEIC file appears to be corrupted or invalid.';
+        errorMessage = 'This WebP file appears to be corrupted or invalid.';
       } else if (err?.message) {
         errorType = 'CONVERSION_FAILED';
         errorMessage = `Conversion failed: ${err.message}`;
@@ -231,6 +166,51 @@ export class HeicConverterService {
         }
       };
     }
+  }
+
+  /**
+   * Convert WebP file to JPG using Canvas API
+   */
+  private async convertWebpToJpg(file: File, quality: number): Promise<Blob | null> {
+    return new Promise((resolve, reject) => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+
+      if (!ctx) {
+        reject(new Error('Could not get canvas context'));
+        return;
+      }
+
+      img.onload = () => {
+        try {
+          // Set canvas dimensions to match image
+          canvas.width = img.width;
+          canvas.height = img.height;
+
+          // Draw the WebP image onto the canvas
+          ctx.drawImage(img, 0, 0);
+
+          // Convert canvas to JPG blob
+          canvas.toBlob((blob) => {
+            // Cleanup
+            URL.revokeObjectURL(img.src);
+            resolve(blob);
+          }, 'image/jpeg', quality);
+        } catch (error) {
+          URL.revokeObjectURL(img.src);
+          reject(error);
+        }
+      };
+
+      img.onerror = () => {
+        URL.revokeObjectURL(img.src);
+        reject(new Error('Failed to load WebP image'));
+      };
+
+      // Create object URL for the WebP file
+      img.src = URL.createObjectURL(file);
+    });
   }
   
   /**
@@ -259,9 +239,6 @@ export class HeicConverterService {
     if (typeof window !== 'undefined' && 'gc' in window && typeof (window as { gc?: () => void }).gc === 'function') {
       (window as { gc: () => void }).gc();
     }
-    
-    // Clear any cached blobs or URLs
-    // This is handled by the components that create object URLs
   }
 
   /**
@@ -293,10 +270,15 @@ export class HeicConverterService {
 
         // Draw and convert to data URL
         ctx?.drawImage(img, 0, 0, width, height);
-        resolve(canvas.toDataURL('image/jpeg', 0.8));
+        const thumbnail = canvas.toDataURL('image/jpeg', 0.8);
+        
+        // Cleanup
+        URL.revokeObjectURL(img.src);
+        resolve(thumbnail);
       };
 
       img.onerror = () => {
+        URL.revokeObjectURL(img.src);
         reject(new Error('Failed to generate thumbnail'));
       };
 
@@ -305,11 +287,10 @@ export class HeicConverterService {
   }
 
   /**
-   * Check if a file is a HEIC file
+   * Check if a file is a WebP file
    */
-  private isHeicFile(file: File): boolean {
-    const extension = file.name.toLowerCase();
-    return extension.endsWith('.heic') || extension.endsWith('.heif');
+  private isWebpFile(file: File): boolean {
+    return file.name.toLowerCase().endsWith('.webp');
   }
 
   /**
@@ -329,11 +310,11 @@ export class HeicConverterService {
   public static getErrorMessage(error: ConversionError): string {
     switch (error) {
       case 'INVALID_FILE':
-        return 'Invalid HEIC file. Please select a valid HEIC or HEIF file.';
+        return 'Invalid WebP file. Please select a valid WebP file.';
       case 'CONVERSION_FAILED':
         return 'Conversion failed. Please try again or select a different file.';
       case 'BROWSER_NOT_SUPPORTED':
-        return 'Your browser does not support HEIC conversion. Please use Chrome 57+, Firefox 52+, Safari 11+, or Edge 16+.';
+        return 'Your browser does not support WebP conversion. Please use a modern browser.';
       case 'MEMORY_ERROR':
         return 'Not enough memory to convert this file. Try selecting smaller files.';
       case 'UNKNOWN_ERROR':
@@ -344,8 +325,8 @@ export class HeicConverterService {
 }
 
 // Export singleton instance
-export const heicConverter = new HeicConverterService();
+export const webpConverter = new WebpConverterService();
 
 // Export utility functions
-export const formatFileSize = HeicConverterService.formatFileSize;
-export const getErrorMessage = HeicConverterService.getErrorMessage;
+export const formatFileSize = WebpConverterService.formatFileSize;
+export const getErrorMessage = WebpConverterService.getErrorMessage;

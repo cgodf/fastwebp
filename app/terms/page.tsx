@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - FastHEIC Converter",
+  title: "Terms of Service - FastWebP Converter",
   description:
-    "FastHEIC Terms of Service - Usage terms, disclaimers, and user responsibilities for our HEIC to JPG conversion service.",
-  keywords: "HEIC converter terms, image converter terms of service, free converter license, FastHEIC usage terms",
+    "FastWebP Terms of Service - Usage terms, disclaimers, and user responsibilities for our WebP to JPG conversion service.",
+  keywords: "WebP converter terms, image converter terms of service, free converter license, FastWebP usage terms",
   openGraph: {
-    title: "Terms of Service - FastHEIC Converter",
+    title: "Terms of Service - FastWebP Converter",
     description:
-      "FastHEIC Terms of Service - Usage terms, disclaimers, and user responsibilities for our HEIC to JPG conversion service.",
+      "FastWebP Terms of Service - Usage terms, disclaimers, and user responsibilities for our WebP to JPG conversion service.",
   },
 };
 
@@ -36,7 +36,7 @@ export default function TermsOfService() {
               </h2>
             </div>
             <p className="text-foreground">
-              By using FastHEIC, you agree to these terms. Our service is provided free of charge 
+              By using FastWebP, you agree to these terms. Our service is provided free of charge 
               for legitimate file conversion purposes.
             </p>
           </div>
@@ -53,10 +53,10 @@ export default function TermsOfService() {
               </h2>
               <div className="border-2 border-border p-6 rounded-lg">
                 <p className="text-muted-foreground mb-4">
-                  By accessing and using FastHEIC (&ldquo;the Service&rdquo;), you accept
+                  By accessing and using FastWebP (&ldquo;the Service&rdquo;), you accept
                   and agree to be bound by the terms and provision of this
                   agreement. These Terms of Service (&ldquo;Terms&rdquo;) constitute a
-                  legally binding agreement between you and FastHEIC.
+                  legally binding agreement between you and FastWebP.
                 </p>
                 <p className="text-muted-foreground">
                   If you do not agree to these Terms, please do not use our
@@ -72,10 +72,10 @@ export default function TermsOfService() {
               </h2>
               <div className="border-2 border-border p-6 rounded-lg">
                 <p className="text-muted-foreground mb-4">
-                  FastHEIC is a free, browser-based service that converts HEIC
+                  FastWebP is a free, browser-based service that converts WebP
                   (High Efficiency Image Container) files to JPG format. The
                   service operates entirely within your web browser using
-                  WebAssembly technology.
+                  Canvas API technology.
                 </p>
                 <div className="border border-border p-4 rounded">
                   <p className="text-sm font-medium text-foreground mb-2">
@@ -103,7 +103,7 @@ export default function TermsOfService() {
                     Permitted Uses
                   </h3>
                   <ul className="text-sm text-muted-foreground space-y-2">
-                    <li>• Converting your own HEIC files to JPG format</li>
+                    <li>• Converting your own WebP files to JPG format</li>
                     <li>• Converting files you have permission to modify</li>
                     <li>• Personal, educational, and commercial use</li>
                     <li>• Batch processing multiple files</li>
@@ -161,7 +161,7 @@ export default function TermsOfService() {
                     </h3>
                     <p className="text-sm text-muted-foreground">
                       You are responsible for using a compatible, modern web
-                      browser that supports WebAssembly. We recommend keeping
+                      browser that supports Canvas API. We recommend keeping
                       your browser updated for optimal performance and security.
                     </p>
                   </div>
@@ -219,7 +219,7 @@ export default function TermsOfService() {
                     Service &ldquo;As Is&rdquo;
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    FastHEIC is provided &ldquo;as is&rdquo; without any warranties,
+                    FastWebP is provided &ldquo;as is&rdquo; without any warranties,
                     expressed or implied. We make no representations or
                     warranties regarding the accuracy, reliability, or
                     availability of the service.
@@ -238,7 +238,7 @@ export default function TermsOfService() {
                   </p>
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li>
-                      • Compression differences between HEIC and JPG formats
+                      • Compression differences between WebP and JPG formats
                     </li>
                     <li>• Color space variations</li>
                     <li>• Metadata preservation limitations</li>
@@ -270,7 +270,7 @@ export default function TermsOfService() {
                   <strong className="text-foreground">
                     To the fullest extent permitted by law
                   </strong>
-                  , FastHEIC and its operators shall not be liable for any
+                  , FastWebP and its operators shall not be liable for any
                   direct, indirect, incidental, special, consequential, or
                   punitive damages arising from or related to your use of the
                   service, including but not limited to:
@@ -340,7 +340,7 @@ export default function TermsOfService() {
                       Our Rights
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      The FastHEIC service, including its design, code,
+                      The FastWebP service, including its design, code,
                       trademarks, and content, is owned by us and protected by
                       intellectual property laws. You may not copy, modify, or
                       distribute our service.
@@ -445,7 +445,7 @@ export default function TermsOfService() {
                     Contact Methods:
                   </p>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Email: info@fastheictojpg.com</li>
+                    <li>• Email: info@fastwebptojpg.com</li>
                   </ul>
                 </div>
               </div>
@@ -456,7 +456,7 @@ export default function TermsOfService() {
           <div className="text-center mt-12 pt-8 border-t border-border">
             <div className="bg-primary/10 p-6 rounded-lg mb-6">
               <p className="text-foreground font-medium mb-2">
-                By using FastHEIC, you acknowledge that you have read,
+                By using FastWebP, you acknowledge that you have read,
                 understood, and agree to be bound by these Terms of Service.
               </p>
               <p className="text-sm text-muted-foreground">

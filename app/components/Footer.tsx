@@ -10,15 +10,15 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-8">
-                <Image src="/fastheiclogo.svg" alt="FastHEIC" width={32} height={32} />
+                <Image src="/fastwebplogo.svg" alt="FastWebP" width={32} height={32} />
               </div>
               <div className="flex items-baseline gap-1">
                 <span className="text-lg font-bold text-foreground">Fast</span>
-                <span className="text-lg font-bold text-primary">HEIC</span>
+                <span className="text-lg font-bold text-primary">WebP</span>
               </div>
             </div>
             <p className="text-muted-foreground text-sm mb-4 max-w-md">
-              The fastest and most secure way to convert HEIC files to JPG. All
+              The fastest and most secure way to convert WebP files to JPG. All
               processing happens locally in your browser for complete privacy.
             </p>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -84,7 +84,7 @@ export default function Footer() {
         <div className="mt-8 pt-6 border-t border-border/40">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2024 FastHEIC. Made with ❤️ for privacy-conscious users.
+              © 2024 FastWebP. Made with ❤️ for privacy-conscious users.
             </p>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -95,10 +95,10 @@ export default function Footer() {
                 <span>•</span>
                 <span>No uploads</span>
                 <span>•</span>
-                <span>WebAssembly powered</span>
+                <span>Canvas API powered</span>
                 <span>•</span>
                 <a 
-                  href="https://github.com/cgodf/fastheic" 
+                  href="https://github.com/cgodf/fastwebp"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors flex items-center gap-1"

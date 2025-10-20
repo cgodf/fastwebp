@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ConversionFile } from '../../types/libheif';
+import { ConversionFile } from '../../types/webp';
 import { trackDownload } from './Analytics';
 
 interface DownloadManagerProps {
@@ -51,7 +51,7 @@ export default function DownloadManager({ files }: DownloadManagerProps) {
       const url = URL.createObjectURL(zipBlob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `converted-heic-files-${Date.now()}.zip`;
+      link.download = `converted-webp-files-${Date.now()}.zip`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

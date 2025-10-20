@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
-import { ConversionFile, ConversionProgress } from '../../types/libheif';
-import { heicConverter, ConversionResult } from '../services/heicConverter';
+import { ConversionFile, ConversionProgress } from '../../types/webp';
+import { webpConverter, ConversionResult } from '../services/webpConverter';
 import { trackConversion, trackError } from './Analytics';
 import Image from 'next/image';
 import FileDropzone from './FileDropzone';
@@ -25,7 +25,7 @@ export default function ConversionPipeline() {
 
   // Check browser support on component mount
   useEffect(() => {
-    const supportCheck = heicConverter.checkBrowserSupport();
+    const supportCheck = webpConverter.checkBrowserSupport();
     setBrowserSupported(supportCheck.supported);
     if (!supportCheck.supported) {
       setSupportMessage(supportCheck.message || 'Browser not supported');
@@ -62,7 +62,7 @@ export default function ConversionPipeline() {
 
       try {
         // Convert the file with retry logic
-        const result: ConversionResult = await heicConverter.convertFile(file.file, 0.9, 2);
+        const result: ConversionResult = await webpConverter.convertFile(file.file, 0.9, 2);
         
         if (result.success && result.blob && result.thumbnail) {
           // Success
@@ -95,7 +95,7 @@ export default function ConversionPipeline() {
       }
       
       // Cleanup memory after each conversion
-      heicConverter.cleanupMemory();
+      webpConverter.cleanupMemory();
       
       // Small delay to prevent overwhelming the browser
       await new Promise(resolve => setTimeout(resolve, 100));
@@ -203,7 +203,7 @@ export default function ConversionPipeline() {
           <h2 className="text-2xl font-semibold text-foreground mb-4">Browser Not Supported</h2>
           <p className="text-muted-foreground text-lg mb-6">{supportMessage}</p>
           <p className="text-sm text-muted-foreground">
-            This tool requires WebAssembly support for HEIC conversion.
+            This tool requires Canvas API support for WebP conversion.
           </p>
         </div>
       </div>
@@ -217,11 +217,11 @@ export default function ConversionPipeline() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8">
-              <Image src="/fastheiclogo.svg" alt="FastHEIC" width={32} height={32} />
+              <Image src="/fastwebplogo.svg" alt="FastWebP" width={32} height={32} />
             </div>
             <div className="flex items-baseline gap-1">
               <span className="text-lg font-bold text-foreground">Fast</span>
-              <span className="text-lg font-bold text-primary">HEIC</span>
+              <span className="text-lg font-bold text-primary">WebP</span>
             </div>
           </div>
           <ThemeToggle />
@@ -238,10 +238,10 @@ export default function ConversionPipeline() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-5xl font-bold text-foreground mb-4">
-                Fast, Free HEIC to JPG Converter
+                Fast, Free WebP to JPG Converter
               </h1>
               <p className="text-xl text-muted-foreground">
-                Convert Apple HEIC photos to JPG instantly in your browser
+                Convert WebP images to JPG instantly in your browser
               </p>
             </div>
             
@@ -298,8 +298,8 @@ export default function ConversionPipeline() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-3">
                       {appState === 'completed' ? (
-                        <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center">
-                          <svg className="w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
+                          <svg className="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>

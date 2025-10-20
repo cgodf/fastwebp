@@ -31,7 +31,7 @@ export default function Analytics() {
             anonymize_ip: true,
             allow_google_signals: false,
             allow_ad_personalization_signals: false,
-            // Custom events for HEIC conversion tracking
+            // Custom events for WebP conversion tracking
             custom_map: {
               'custom_parameter_1': 'conversion_type',
               'custom_parameter_2': 'file_count'

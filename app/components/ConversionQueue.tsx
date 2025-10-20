@@ -1,7 +1,7 @@
 'use client';
 
-import { ConversionFile } from '../../types/libheif';
-import { formatFileSize } from '../services/heicConverter';
+import { ConversionFile } from '../../types/webp';
+import { formatFileSize } from '../services/webpConverter';
 
 interface ConversionQueueProps {
   files: ConversionFile[];
@@ -31,7 +31,7 @@ function FileCard({ file, onRemove }: FileCardProps) {
         );
       case 'done':
         return (
-          <div className="w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center">
+          <div className="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center">
             <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
@@ -72,7 +72,7 @@ function FileCard({ file, onRemove }: FileCardProps) {
       case 'converting':
         return 'text-primary';
       case 'done':
-        return 'text-teal-500';
+        return 'text-purple-500';
       case 'failed':
         return 'text-destructive';
       default:
@@ -85,7 +85,7 @@ function FileCard({ file, onRemove }: FileCardProps) {
       glass-card p-4 transition-smooth animate-slide-up
       ${file.status === 'converting' ? 'scale-105 border-primary/50 animate-pulse-glow' : ''}
       ${file.status === 'failed' ? 'border-destructive/50' : ''}
-      ${file.status === 'done' ? 'border-teal-500/30 bg-teal-500/5' : ''}
+      ${file.status === 'done' ? 'border-purple-500/30 bg-purple-500/5' : ''}
     `}>
       <div className="flex items-center gap-4">
         {/* Thumbnail or Icon */}
@@ -114,7 +114,7 @@ function FileCard({ file, onRemove }: FileCardProps) {
               {file.name}
             </h3>
             <span className="text-xs text-muted-foreground bg-muted/50 px-2 py-1 rounded">
-              {file.status === 'done' ? 'JPG' : 'HEIC'}
+              {file.status === 'done' ? 'JPG' : 'WebP'}
             </span>
           </div>
           
@@ -122,7 +122,7 @@ function FileCard({ file, onRemove }: FileCardProps) {
             <div className="text-sm text-muted-foreground">
               {formatFileSize(file.size)}
               {file.convertedBlob && (
-                <span className="text-teal-500 ml-2">
+                <span className="text-purple-500 ml-2">
                   → {formatFileSize(file.convertedBlob.size)}
                 </span>
               )}

@@ -63,7 +63,7 @@ export function LinearProgress({
 
           {/* Success progress */}
           <div
-            className="absolute left-0 top-0 h-full bg-gradient-to-r from-teal-400 to-teal-500 transition-all duration-500 ease-out"
+            className="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 to-purple-500 transition-all duration-500 ease-out"
             style={{ width: `${successPercentage}%` }}
           />
 
@@ -139,7 +139,7 @@ export function CircularProgress({
           fill="transparent"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
-          className="text-teal-500 transition-all duration-500 ease-out"
+          className="text-purple-500 transition-all duration-500 ease-out"
           strokeLinecap="round"
         />
 

@@ -1,7 +1,7 @@
 'use client';
 
-import { ConversionFile, ConversionProgress } from '../../types/libheif';
-import { formatFileSize } from '../services/heicConverter';
+import { ConversionFile, ConversionProgress } from '../../types/webp';
+import { formatFileSize } from '../services/webpConverter';
 
 interface BatchProgressSummaryProps {
   files: ConversionFile[];
@@ -57,7 +57,7 @@ export default function BatchProgressSummary({
             total size
           </div>
           {convertedSize > 0 && (
-            <div className="text-xs text-teal-500">
+            <div className="text-xs text-purple-500">
               {compressionRatio > 0 ? `-${compressionRatio}%` : 'same size'}
             </div>
           )}
@@ -111,7 +111,7 @@ export default function BatchProgressSummary({
               <div
                 key={file.id}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  file.status === 'done' ? 'bg-teal-500' :
+                  file.status === 'done' ? 'bg-purple-500' :
                   file.status === 'converting' ? 'bg-primary animate-pulse' :
                   file.status === 'failed' ? 'bg-destructive' :
                   'bg-muted/50'

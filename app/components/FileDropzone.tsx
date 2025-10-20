@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 import { useDropzone, FileRejection } from 'react-dropzone';
-import { ConversionFile } from '../../types/libheif';
+import { ConversionFile } from '../../types/webp';
 
 interface FileDropzoneProps {
   onFilesAdded: (files: ConversionFile[]) => void;
@@ -39,9 +39,9 @@ export default function FileDropzone({
 
     for (const file of files) {
       // Check file type
-      const isHeic = file.name.toLowerCase().match(/\.(heic|heif)$/);
-      if (!isHeic) {
-        newErrors.push(`${file.name}: Only HEIC and HEIF files are supported.`);
+      const isWebp = file.name.toLowerCase().match(/\.webp$/);
+      if (!isWebp) {
+        newErrors.push(`${file.name}: Only WebP files are supported.`);
         continue;
       }
 
@@ -82,7 +82,7 @@ export default function FileDropzone({
     const conversionFiles: ConversionFile[] = validFiles.map((file, index) => ({
       id: `${Date.now()}-${index}`,
       file,
-      name: file.name.replace(/\.(heic|heif)$/i, ''),
+      name: file.name.replace(/\.webp$/i, ''),
       size: file.size,
       status: 'waiting',
     }));
@@ -130,7 +130,7 @@ export default function FileDropzone({
       } else if (errorInfo.count === 1) {
         // Single file error - show filename
         if (errorKey === 'invalid-type') {
-          consolidatedErrors.push(`${errorInfo.files[0]}: Only HEIC and HEIF files are supported.`);
+          consolidatedErrors.push(`${errorInfo.files[0]}: Only WebP files are supported.`);
         } else if (errorKey === 'too-large') {
           consolidatedErrors.push(`${errorInfo.files[0]}: File too large. Maximum ${Math.round(maxFileSize / (1024 * 1024))}MB per file.`);
         } else {
@@ -139,7 +139,7 @@ export default function FileDropzone({
       } else {
         // Multiple files with same error - show count
         if (errorKey === 'invalid-type') {
-          consolidatedErrors.push(`${errorInfo.count} files rejected: Only HEIC and HEIF files are supported.`);
+          consolidatedErrors.push(`${errorInfo.count} files rejected: Only WebP files are supported.`);
         } else if (errorKey === 'too-large') {
           consolidatedErrors.push(`${errorInfo.count} files rejected: Files too large. Maximum ${Math.round(maxFileSize / (1024 * 1024))}MB per file.`);
         } else {
@@ -155,8 +155,7 @@ export default function FileDropzone({
     onDropAccepted,
     onDropRejected,
     accept: {
-      'image/heic': ['.heic'],
-      'image/heif': ['.heif'],
+      'image/webp': ['.webp'],
     },
     disabled,
     multiple: true,
@@ -202,8 +201,8 @@ export default function FileDropzone({
           <div>
             <h3 className="text-2xl font-semibold text-foreground mb-2">
               {isDragActive
-                ? 'Drop your HEIC files here'
-                : 'Drag & Drop Your HEIC Files Here'
+                ? 'Drop your WebP files here'
+                : 'Drag & Drop Your WebP Files Here'
               }
             </h3>
             <p className="text-muted-foreground text-lg">
@@ -213,7 +212,7 @@ export default function FileDropzone({
 
           {/* File Limits Info */}
           <div className="text-sm text-muted-foreground space-y-1">
-            <p>Supports HEIC and HEIF files</p>
+            <p>Supports WebP files</p>
             <p>
               Maximum {maxFiles} files • {Math.round(maxFileSize / (1024 * 1024))}MB per file • {Math.round(maxTotalSize / (1024 * 1024))}MB total
             </p>

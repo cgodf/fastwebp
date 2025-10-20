@@ -19,14 +19,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FastHEIC - Fast & Free HEIC to JPG Converter",
-  description: "Convert HEIC files to JPG instantly in your browser. No uploads, completely private, bulk conversion supported. Fast, free, and secure HEIC converter.",
-  keywords: "HEIC to JPG, HEIC converter, Apple photos, convert HEIC, HEIF to JPG, image converter, free converter, fast HEIC, FastHEIC, iPhone photos, iOS photos, bulk convert",
-  authors: [{ name: "FastHEIC" }],
-  creator: "FastHEIC",
-  publisher: "FastHEIC",
+  title: "FastWebP - Fast & Free WebP to JPG Converter",
+  description: "Convert WebP files to JPG instantly in your browser. No uploads, completely private, bulk conversion supported. Fast, free, and secure WebP converter.",
+  keywords: "WebP to JPG, WebP converter, convert WebP, image converter, free converter, fast WebP, FastWebP, bulk convert, web images",
+  authors: [{ name: "FastWebP" }],
+  creator: "FastWebP",
+  publisher: "FastWebP",
   category: "Technology",
-  applicationName: "FastHEIC",
+  applicationName: "FastWebP",
   referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
@@ -34,27 +34,27 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "FastHEIC - Fast & Free HEIC to JPG Converter",
-    description: "Convert HEIC files to JPG instantly in your browser. No uploads, completely private, bulk conversion supported.",
-    url: "https://www.fastheictojpg.com",
-    siteName: "FastHEIC",
+    title: "FastWebP - Fast & Free WebP to JPG Converter",
+    description: "Convert WebP files to JPG instantly in your browser. No uploads, completely private, bulk conversion supported.",
+    url: "https://www.fastwebptojpg.com",
+    siteName: "FastWebP",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://www.fastheictojpg.com/og-image.jpg",
+        url: "https://www.fastwebptojpg.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "FastHEIC - Convert HEIC to JPG instantly",
+        alt: "FastWebP - Convert WebP to JPG instantly",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FastHEIC - Fast & Free HEIC to JPG Converter",
-    description: "Convert HEIC files to JPG instantly in your browser. Private and secure.",
-    images: ["https://www.fastheictojpg.com/og-image.jpg"],
-    creator: "@fastheic",
+    title: "FastWebP - Fast & Free WebP to JPG Converter",
+    description: "Convert WebP files to JPG instantly in your browser. Private and secure.",
+    images: ["https://www.fastwebptojpg.com/og-image.jpg"],
+    creator: "@fastwebp",
   },
   robots: {
     index: true,
@@ -71,12 +71,12 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code', // To be replaced with actual code
   },
   alternates: {
-    canonical: "https://www.fastheictojpg.com",
+    canonical: "https://www.fastwebptojpg.com",
   },
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/fastheiclogo.svg", type: "image/svg+xml" },
+      { url: "/fastwebplogo.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   },
   other: {
     'google-adsense-account': process.env.NEXT_PUBLIC_ADSENSE_ID || '',
-    'msapplication-TileColor': '#0d9488',
+    'msapplication-TileColor': '#7c3aed',
   },
 };
 

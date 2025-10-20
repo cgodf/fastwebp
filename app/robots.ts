@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
  
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://www.fastheictojpg.com'
+  const baseUrl = 'https://www.fastwebptojpg.com'
   
   return {
     rules: {

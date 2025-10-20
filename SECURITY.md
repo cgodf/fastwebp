@@ -2,12 +2,12 @@
 
 ## Overview
 
-FastHEIC is designed with security and privacy as top priorities. All file processing happens locally in the user's browser - no files are ever uploaded to our servers.
+FastWebP is designed with security and privacy as top priorities. All file processing happens locally in the user's browser - no files are ever uploaded to our servers.
 
 ## Security Features
 
 ### ✅ Client-Side Processing
-- All HEIC to JPG conversion happens in the browser using WebAssembly
+- All WebP to JPG conversion happens in the browser using Canvas API
 - No file uploads to any server
 - No backend API endpoints
 - No data storage or databases
@@ -63,13 +63,13 @@ The following security headers are implemented:
 
 ### Potential Risks
 ⚠️ **Browser Vulnerabilities** - Users should keep browsers updated  
-⚠️ **WebAssembly Bugs** - Dependent on heic2any library security  
+⚠️ **Canvas API Bugs** - Dependent on webp2any library security  
 ⚠️ **Client-Side Attacks** - Malicious browser extensions could access files  
 
 ## Best Practices for Users
 
 1. **Use Updated Browsers** - Keep your browser up to date
-2. **Verify HTTPS** - Ensure you're on `https://fastheictojpg.com`
+2. **Verify HTTPS** - Ensure you're on `https://fastwebptojpg.com`
 3. **Disable Suspicious Extensions** - Browser extensions can access page data
 4. **Local Processing** - Files never leave your device
 5. **No Account Needed** - No passwords to manage or leak
@@ -78,7 +78,7 @@ The following security headers are implemented:
 
 If you discover a security vulnerability, please report it responsibly:
 
-**Email:** security@fastheictojpg.com
+**Email:** security@fastwebptojpg.com
 
 **Please include:**
 - Description of the vulnerability
@@ -128,7 +128,7 @@ We monitor and update dependencies regularly:
 ## Technical Security Measures
 
 ### Input Validation
-- File type checking (HEIC/HEIF only)
+- File type checking (WebP/WebP only)
 - File size limits enforced
 - Maximum file count limits
 - Sanitized file names
@@ -136,7 +136,7 @@ We monitor and update dependencies regularly:
 ### Memory Management
 - Automatic cleanup after conversion
 - Bounded memory usage
-- No memory leaks in WebAssembly
+- No memory leaks in Canvas API
 
 ### Error Handling
 - Graceful error recovery

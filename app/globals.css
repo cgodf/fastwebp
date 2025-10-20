@@ -11,20 +11,20 @@
   --glass-shadow: rgba(0, 0, 0, 0.05);
   --glass-backdrop: blur(12px);
   
-  /* Additional colors - Zinc/Slate with teal accents */
-  --primary: #0d9488; /* teal-600 */
+  /* Additional colors - Zinc/Slate with purple accents */
+  --primary: #7c3aed; /* purple-700 */
   --primary-foreground: #ffffff;
   --secondary: #f4f4f5; /* zinc-100 */
   --secondary-foreground: #18181b; /* zinc-900 */
   --muted: #f4f4f5; /* zinc-100 */
   --muted-foreground: #71717a; /* zinc-500 */
-  --accent: #14b8a6; /* teal-500 */
-  --accent-foreground: #f0fdfa;
+  --accent: #8b5cf6; /* purple-500 */
+  --accent-foreground: #faf5ff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e4e4e7; /* zinc-200 */
   --input: #ffffff;
-  --ring: #0d9488;
+  --ring: #7c3aed;
 }
 
 /* Default to dark mode */
@@ -40,20 +40,20 @@
   --glass-shadow: rgba(0, 0, 0, 0.2);
   --glass-backdrop: blur(10px);
   
-  /* Additional dark colors - Zinc/Slate with teal accents */
-  --primary: #14b8a6; /* teal-500 - bright for dark mode */
+  /* Additional dark colors - Zinc/Slate with purple accents */
+  --primary: #8b5cf6; /* purple-500 - bright for dark mode */
   --primary-foreground: #ffffff;
   --secondary: #27272a; /* zinc-800 */
   --secondary-foreground: #fafafa; /* zinc-50 */
   --muted: #27272a; /* zinc-800 */
   --muted-foreground: #a1a1aa; /* zinc-400 */
-  --accent: #2dd4bf; /* teal-400 */
+  --accent: #a78bfa; /* purple-400 */
   --accent-foreground: #09090b; /* zinc-950 */
   --destructive: #f87171; /* red-400 */
   --destructive-foreground: #ffffff;
   --border: #3f3f46; /* zinc-700 */
   --input: #27272a; /* zinc-800 */
-  --ring: #14b8a6; /* teal-500 */
+  --ring: #8b5cf6; /* purple-500 */
 }
 
 /* Light mode override (when explicitly set) */
@@ -66,8 +66,8 @@
   --glass-backdrop: blur(12px);
   --muted-foreground: #71717a; /* zinc-500 */
   --border: #e4e4e7; /* zinc-200 */
-  --accent: #5eead4; /* teal-300 */
-  --ring: #14b8a6; /* teal-500 */
+  --accent: #c4b5fd; /* purple-300 */
+  --ring: #8b5cf6; /* purple-500 */
 }
 
 @theme inline {
@@ -154,8 +154,8 @@ body {
 }
 
 .glass-subtle {
-  background: rgba(45, 212, 191, 0.05); /* subtle teal background */
-  border: 1px solid rgba(45, 212, 191, 0.1); /* subtle teal border */
+  background: rgba(124, 58, 237, 0.05); /* subtle purple background */
+  border: 1px solid rgba(124, 58, 237, 0.1); /* subtle purple border */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 4px 16px var(--glass-shadow);

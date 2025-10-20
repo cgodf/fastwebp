@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How It Works - FastHEIC Converter",
-  description: "Learn how FastHEIC converts HEIC files to JPG entirely in your browser. No uploads, complete privacy, and lightning-fast conversion.",
-  keywords: "how to convert HEIC, HEIC conversion process, browser HEIC converter, WebAssembly HEIC, local file conversion, private HEIC converter",
+  title: "How It Works - FastWebP Converter",
+  description: "Learn how FastWebP converts WebP files to JPG entirely in your browser. No uploads, complete privacy, and lightning-fast conversion.",
+  keywords: "how to convert WebP, WebP conversion process, browser WebP converter, Canvas API WebP, local file conversion, private WebP converter",
   openGraph: {
-    title: "How It Works - FastHEIC Converter",
-    description: "Learn how FastHEIC converts HEIC files to JPG entirely in your browser. No uploads, complete privacy, and lightning-fast conversion.",
+    title: "How It Works - FastWebP Converter",
+    description: "Learn how FastWebP converts WebP files to JPG entirely in your browser. No uploads, complete privacy, and lightning-fast conversion.",
   },
 };
 
@@ -32,10 +32,10 @@ export default function HowItWorks() {
                 </h2>
               </div>
               <p className="text-muted-foreground mb-4">
-                FastHEIC uses cutting-edge WebAssembly (WASM) technology to convert your HEIC files 
+                FastWebP uses the native Canvas API to convert your WebP files 
                 directly in your browser. This means your files never leave your device - they&apos;re 
-                processed locally on your computer using the same powerful libraries that professional 
-                image editing software uses.
+                processed locally on your computer using built-in browser capabilities for
+                maximum speed and compatibility.
               </p>
               <div className="border-2 border-border p-4 rounded">
                 <p className="text-sm text-foreground font-medium">
@@ -58,7 +58,7 @@ export default function HowItWorks() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">File Selection</h3>
                     <p className="text-muted-foreground">
-                      Drag and drop your HEIC files or click to browse. You can select multiple 
+                      Drag and drop your WebP files or click to browse. You can select multiple 
                       files for batch conversion - no limits on quantity.
                     </p>
                   </div>
@@ -71,7 +71,7 @@ export default function HowItWorks() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Local Processing</h3>
                     <p className="text-muted-foreground">
-                      Our WASM-based decoder reads the HEIC format and extracts the image data. 
+                      The browser&apos;s native image decoder reads the WebP format and loads it onto a Canvas. 
                       The conversion happens entirely within your browser&apos;s sandbox environment.
                     </p>
                   </div>
@@ -115,10 +115,10 @@ export default function HowItWorks() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2 flex items-center">
                     <span className="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
-                    HEIC Decoding
+                    WebP Decoding
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Uses libheif compiled to WebAssembly for native-speed HEIC/HEIF format support
+                    Uses native browser image loading for WebP format support - no external libraries needed
                   </p>
                 </div>
                 
@@ -199,24 +199,24 @@ export default function HowItWorks() {
                 Browser Compatibility
               </h2>
               <p className="text-muted-foreground mb-4">
-                FastHEIC works on all modern browsers that support WebAssembly:
+                FastWebP works on all modern browsers that support the Canvas API:
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                 <div className="flex items-center text-foreground">
                   <span className="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
-                  Chrome 57+
+                  All Chrome
                 </div>
                 <div className="flex items-center text-foreground">
                   <span className="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
-                  Firefox 52+
+                  All Firefox
                 </div>
                 <div className="flex items-center text-foreground">
                   <span className="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
-                  Safari 11+
+                  All Safari
                 </div>
                 <div className="flex items-center text-foreground">
                   <span className="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
-                  Edge 16+
+                  All Edge
                 </div>
               </div>
             </section>
@@ -228,7 +228,7 @@ export default function HowItWorks() {
               href="/"
               className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors"
             >
-              Try FastHEIC Now →
+              Try FastWebP Now →
             </Link>
           </div>
         </div>
